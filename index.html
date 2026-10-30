@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Opening Winnipeg Shipping Booking Form</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f4f7fb;
+        color: #17243c;
+      }
+      * { box-sizing: border-box; }
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+      main {
+        width: min(100%, 520px);
+        padding: 36px;
+        border: 1px solid #dbe4f0;
+        border-radius: 20px;
+        background: #fff;
+        box-shadow: 0 18px 50px rgba(31, 55, 90, 0.12);
+        text-align: center;
+      }
+      .mark {
+        display: inline-grid;
+        place-items: center;
+        width: 54px;
+        height: 54px;
+        margin-bottom: 16px;
+        border-radius: 16px;
+        background: #f7a000;
+        color: #fff;
+        font-size: 26px;
+        font-weight: 800;
+      }
+      h1 { margin: 0 0 10px; font-size: clamp(24px, 5vw, 32px); }
+      p { margin: 0 0 24px; color: #5a6b85; line-height: 1.6; }
+      a {
+        display: inline-block;
+        padding: 12px 20px;
+        border-radius: 10px;
+        background: #f7a000;
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="mark" aria-hidden="true">QS</div>
+      <h1>Winnipeg Shipping</h1>
+      <p>Opening the secure booking form&hellip;</p>
+      <a id="continueLink" href="https://script.google.com/macros/s/AKfycby5v-DHHTVGMUPAfgp41qUMdFyHPofg_1Vl_Riblr038uQt65_W6UF6dJjVO97RFhKadw/exec">Continue to booking form</a>
+    </main>
+    <script>
+      const appUrl = 'https://script.google.com/macros/s/AKfycby5v-DHHTVGMUPAfgp41qUMdFyHPofg_1Vl_Riblr038uQt65_W6UF6dJjVO97RFhKadw/exec';
+      const destination = new URL(appUrl);
+
+      for (const [key, value] of new URLSearchParams(window.location.search)) {
+        destination.searchParams.set(key, value);
+      }
+      destination.hash = window.location.hash;
+
+      document.getElementById('continueLink').href = destination.href;
+      window.location.replace(destination.href);
+    </script>
+  </body>
+</html>
